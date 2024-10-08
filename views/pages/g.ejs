@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G page</title>
+  <style>
+    
+    .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+       height: 60vh;
+        margin: 1.5rem auto;
+    }
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-container label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    .form-container input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(95, 88, 88);
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .form-container button:hover {
+        background-color: white;
+        color: rgb(95, 88, 88);
+    }
+</style>
+</head>
+<body>
+  <%- include('../layouts/header');%>
+  <div class="form-container">
+    <h2>G Page</h2>
+    <form action="#">
+        <label for="license">License Number</label>
+        <input type="text" id="license" name="license" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+  <%- include('../layouts/footer')%>
+</body>
+</html>
