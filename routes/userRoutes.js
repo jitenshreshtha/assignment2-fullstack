@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post('/g2', async (req,res) =>{
 try{
-    const {firstname,lastname,licensenum,age,cardetails}= req.body;
+    const {firstname,lastname,license,age,dob,cardetails}= req.body;
 
     const newUser = new User({
         firstname,
@@ -17,6 +17,7 @@ try{
     })
 
     const savedUser = await newUser.save();
+    console.log('savedUser', savedUser);
 }
 catch(err){
     console.log(err);
