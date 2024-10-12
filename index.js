@@ -38,7 +38,7 @@ app.get('/login',(req,res)=>{
     res.render('pages/g2');
   })
 app.get('/g',(req,res)=>{
-    res.render('pages/g');
+    res.render('pages/g',{ user: null});
 })
 app.get('/',(req,res)=>{
     res.render('pages/index');

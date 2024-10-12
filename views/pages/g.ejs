@@ -51,13 +51,38 @@
   <%- include('../layouts/header');%>
   <div class="form-container">
     <h2>G Page</h2>
-    <form action="#">
+    <form id="licenseForm" action="/g/search" method="GET">
         <label for="license">License Number</label>
         <input type="text" id="license" name="license" required>
         
         <button type="submit">Submit</button>
     </form>
-</div>
+
+   <!-- Display user info -->
+   <% if (user) { %>
+    <h2>User Information</h2>
+    <p>First Name: <%= user.firstname %></p>
+    <p>Last Name: <%= user.lastname %></p>
+    <p>Age: <%= user.age %></p>
+
+    <!-- Car Details Form -->
+    <h3>Update Car Details</h3>
+    <form action="/g/update/<%= user._id %>" method="POST">
+        <label>Make:</label>
+        <input type="text" name="make" value="<%= user.car_details.make %>" required><br>
+        <label>Model:</label>
+        <input type="text" name="model" value="<%= user.car_details.model %>" required><br>
+        <label>Year:</label>
+        <input type="number" name="year" value="<%= user.car_details.year %>" required><br>
+        <label>Plate Number:</label>
+        <input type="text" name="plate" value="<%= user.car_details.plate %>" required><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <% } else { %>
+      <p>No user found with this license number. Please enter a valid license number.</p>
+    <% } %>
+
   <%- include('../layouts/footer')%>
 </body>
 </html>
